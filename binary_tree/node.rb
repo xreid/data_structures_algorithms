@@ -29,7 +29,7 @@ class Node
     else
       return @right.dfs_rec(target) unless @right.nil?
     end
-    nil
+    -1
   end
 
   def to_s(all_nodes = false)
@@ -41,8 +41,8 @@ class Node
       all_data << "#{@right.to_s(true)}" unless @right.nil?
       all_data
     else
-      "Data:#{@data} Left:#{@left.data unless @left.nil?} Right:#{@right.data"\
-      "unless @right.nil?} Top:#{@top.data unless @top.nil?}"
+      "Data:#{@data} Left:#{@left.data unless @left.nil?} Right:"\
+      "#{@right.data unless @right.nil?} Top:#{@top.data unless @top.nil?}"
     end
   end
 
@@ -58,6 +58,6 @@ class Node
       nodes << current_node.left  unless current_node.left.nil?
       nodes << current_node.right unless current_node.right.nil?
     end
-    nil
+    -1
   end
 end
