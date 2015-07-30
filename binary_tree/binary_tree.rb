@@ -9,11 +9,7 @@ class BinaryTree
   end
 
   def add(data)
-    if @root.nil?
-      @root = Node.new(data)
-    else
-      @root.add(data)
-    end
+    @root.nil? ? @root = Node.new(data) : @root.add(data)
   end
 
   def bfs(target)
